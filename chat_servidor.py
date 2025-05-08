@@ -5,6 +5,7 @@ app = Flask(__name__)
 # lista para almacenar los mensajes
 mensajes = []
 
+
 @app.route("/enviar", methods=["POST"])
 def enviar():
     # para que el cliente envie mensajes, 
@@ -21,7 +22,7 @@ def enviar():
         # confirma que el mensaje fue recibido
         return jsonify({"estado": "mensaje recibido"})
     else:
-        #devuelve error si faltan datos
+        # devuelve error si faltan datos
         return jsonify({"error": "faltan datos"})
 
 @app.route("/mensajes", methods=["GET"])
